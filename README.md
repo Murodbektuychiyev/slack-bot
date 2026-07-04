@@ -8,7 +8,7 @@ A fun, interactive Slack bot built for Hack Clubbers to fetch instant jokes, cat
 
 <!-- BU YERGA Slack'da botingiz ishlayotgan jarayondan bitta skrinshot yoki GIF havola qiling -->
 
-![uz-bot demo]()
+![uz-bot demo](./result.png)
 
 ---
 
