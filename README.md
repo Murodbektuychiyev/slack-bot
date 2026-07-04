@@ -1,34 +1,43 @@
-# ⚡️ uz-bot | High-Performance Slack Bot
+# ⚡️ uz-bot
 
-An interactive, asynchronous Slack bot built for the **Hack Club** workspace as part of the **NASA Stardance Summer Program 2026**. This bot leverages the Slack Bolt framework, operates via secure Socket Mode, and integrates external REST APIs to handle custom slash commands dynamically.
-
----
-
-## 🚀 Features & Commands
-
-All commands are prefixed with `uz-bot-` to prevent collisions in a crowded workspace environment:
-
-*   **`/uz-bot-ping`** – Measures the exact WebSocket connection latency between the Slack client and the server.
-*   **`/uz-bot-catfact`** – Fetches real-time educational facts about felines from the open CatFact API.
-*   **`/uz-bot-joke`** – Pulls random setup/punchline jokes using the Official Joke API to keep the workspace engaging.
+A fun, interactive Slack bot built for Hack Clubbers to fetch instant jokes, cat facts, and check connection latency directly inside Slack.
 
 ---
 
-## 🛠️ Architecture & Tech Stack
+## 📸 See It In Action
 
-*   **Runtime Environment:** Node.js (v18+ LTS)
-*   **Application Framework:** `@slack/bolt`
-*   **Networking Mode:** Socket Mode (WebSockets over port 443 — no public URL/ngrok required)
-*   **HTTP Client:** `axios` (For synchronous, external API requests)
-*   **Secrets Management:** `dotenv` (Environment configurations are decoupled from codebase core)
+<!-- BU YERGA Slack'da botingiz ishlayotgan jarayondan bitta skrinshot yoki GIF havola qiling -->
+
+![uz-bot demo]()
 
 ---
 
-## ⚙️ Configuration & Installation
+## ⚡️ Try It Out / Quick Start
 
-### 1. Clone & Install Dependencies
-First, pull down the repository locally and populate the system node modules:
+If you are in the Hack Club Slack workspace, you can trigger the bot using these commands in any channel:
+
+- `/uz-bot-ping` - Check if the bot is alive and measure the WebSocket connection latency.
+- `/uz-bot-catfact` - Get a random, educational fact about cats.
+- `/uz-bot-joke` - Need a laugh? Get a quick setup/punchline joke instantly.
+
+---
+
+## 🛠️ How It Works (Behind the Scenes)
+
+Instead of using standard HTTP webhooks which require exposing a public URL via tools like ngrok, I built this bot using the **Slack Bolt Framework** operating entirely over **Socket Mode**.
+
+This means the bot establishes a secure, persistent WebSocket connection directly to Slack's servers. When you type a slash command, Slack pushes the event through this open socket, and `axios` securely fetches data from external REST APIs (like the Official Joke API and CatFact API) before formatting the response and sending it back to your chat window.
+
+---
+
+## ⚙️ Local Setup & Installation
+
+Want to run your own instance of `uz-bot`? Follow these quick steps:
+
+### 1. Clone the repository and install dependencies
+
 ```bash
 git clone [https://github.com/Murodbektuychiyev/slack-bot.git](https://github.com/Murodbektuychiyev/slack-bot.git)
 cd slack-bot
 npm install
+```
